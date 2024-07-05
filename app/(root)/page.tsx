@@ -5,22 +5,29 @@ import TotalBalanceBox from '../../components/TotalBalanceBox';
 const Home = () => {
   const loggedIn = { firstName: 'Adrian' };
   return (
-    <div className="home">
+    <section className="home">
       <div className="home-content">
         <header className="home-header">
           <HeaderBox
             type="greeting"
             title="Welcome"
             user={loggedIn?.firstName || 'Guest'}
-            subtext="Access and manage your account and transactions"
+            subtext="Access and manage your account and transactions efficiently."
           />
 
           <TotalBalanceBox accounts={[]} totalBanks={1} totalCurrentBalance={1223.5} />
-
-          <RightSidebar user={loggedIn} />
         </header>
+        {/* 
+        <RecentTransactions
+          accounts={accountsData}
+          transactions={account?.transactions}
+          appwriteItemId={appwriteItemId}
+          page={currentPage}
+        /> */}
       </div>
-    </div>
+
+      <RightSidebar user={loggedIn} transactions={[]} banks={[{ currentBalance: 122.33 }, { currentBalance: 122.33 }]} />
+    </section>
   );
 };
 
